@@ -1,9 +1,9 @@
-import { Typography } from '@mui/material';
+import PersonalDetails from '../sections/PersonalDetails';
 
 export default function Index() {
   return (
     <div>
-      <Typography variant='h1'>Hello World!!</Typography>
+      <PersonalDetails />
     </div>
   );
 }
