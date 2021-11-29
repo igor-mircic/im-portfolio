@@ -1,52 +1,86 @@
-import { ReactElement } from 'react';
-import { Container, Paper, Grid, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import {
+  Container,
+  Paper,
+  Typography,
+  ListItem,
+  List,
+  ListItemIcon,
+} from '@mui/material';
+import { Box, styled } from '@mui/system';
+import MailIcon from '@mui/icons-material/Mail';
+import PhoneIcon from '@mui/icons-material/Phone';
 import Image from 'next/image';
-import profilePic from '../../public/me.jpg';
+import profileImage from '../../public/me.jpg';
 
-interface Props {}
+const ProfileImage = styled(Image)(({ theme }) => ({
+  borderRadius: theme.spacing(2),
+}));
 
-export default function PersonalDetails({}: Props): ReactElement {
-  return (
-    <Container component='section' maxWidth='lg' sx={{ py: 2 }}>
-      <Box
-        component={Paper}
-        borderRadius={3}
-        elevation={10}
-        padding={2}
-        width={320}
-      >
-        <Grid container spacing={2} pb={1}>
-          <Grid item width='1'>
-            <Box component='div' borderRadius={3} overflow='hidden'>
-              <Image
-                src={profilePic}
-                alt='profile picture'
-                layout='responsive'
-              />
-            </Box>
-          </Grid>
-          <Grid item>
-            <Typography variant='h5' component='div'>
-              Igor Mirčic
-            </Typography>
-            <Typography variant='subtitle1' component='div'>
-              Front-end developer
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant='body1' component='div'>
-              contact@igor-mircic.com
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant='body2' component='div'>
-              Self-motivated developer, who is willing to learn and create
-              outstanding UI applications.
-            </Typography>
-          </Grid>
-        </Grid>
-      </Box>
-    </Container>
-  );
+export interface IPersonalDetails {
+  name: string;
+  jobTitle: string;
+  mail: string;
+  phone: string;
+  intro: string[];
 }
+
+const PersonalDetails = ({
+  name,
+  jobTitle,
+  mail,
+  phone,
+  intro,
+}: IPersonalDetails) => {
+  return (
+    <Box
+      component={Paper}
+      borderRadius={3}
+      elevation={2}
+      padding={2}
+      sx={{
+        display: 'grid',
+        gridTemplateColumns: {
+          xs: '1fr',
+          md: '200px 1fr 1fr',
+        },
+        maxWidth: { xs: 350, md: 1 },
+        gap: 2,
+      }}
+    >
+      <Box sx={{ gridRow: { md: 'span 2' } }}>
+        <ProfileImage src={profileImage} alt='profile picture' priority />
+      </Box>
+      <Box>
+        <Typography variant='h5' component='div' sx={{ fontWeight: 600 }}>
+          {name}
+        </Typography>
+        <Typography variant='body1' component='div'>
+          {jobTitle}
+        </Typography>
+      </Box>
+      <List sx={{ justifySelf: { md: 'flex-end' } }}>
+        <ListItem>
+          <ListItemIcon>
+            <MailIcon />
+          </ListItemIcon>
+          {mail}
+        </ListItem>
+        <ListItem>
+          <ListItemIcon>
+            <PhoneIcon />
+          </ListItemIcon>
+          {phone}
+        </ListItem>
+      </List>
+      <Box sx={{ gridColumn: { md: 'span 2' } }}>
+        {intro.map((p, i) => (
+          <Typography key={i} variant='body1' component='p' pb={1}>
+            {p}
+          </Typography>
+        ))}
+      </Box>
+    </Box>
+  );
+};
+
+export default PersonalDetails;

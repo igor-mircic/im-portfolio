@@ -1,19 +1,39 @@
 import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
 
-// Create a theme instance.
-const theme = createTheme({
+const baseTheme = createTheme();
+
+const customTheme = createTheme({
+  typography: {
+    fontFamily: ['Montserrat', 'sans-serif'].join(','),
+    h5: { color: grey[900] },
+    body1: {
+      fontSize: 18,
+      color: grey[800],
+    },
+  },
   palette: {
-    primary: {
-      main: '#556cd6',
+    background: {
+      default: grey[200],
+      paper: grey[50],
     },
-    secondary: {
-      main: '#19857b',
+  },
+  components: {
+    MuiList: {
+      defaultProps: { disablePadding: true },
     },
-    error: {
-      main: red.A400,
+    MuiListItem: {
+      defaultProps: {
+        disablePadding: true,
+        sx: { color: grey[900] },
+      },
+    },
+    MuiListItemIcon: {
+      defaultProps: {
+        sx: { minWidth: 0, paddingRight: baseTheme.spacing(1) },
+      },
     },
   },
 });
 
-export default theme;
+export default customTheme;
