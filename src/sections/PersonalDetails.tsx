@@ -41,14 +41,19 @@ const PersonalDetails = ({
         display: 'grid',
         gridTemplateColumns: {
           xs: '1fr',
-          md: '200px 1fr 1fr',
+          md: '240px 1fr 1fr',
         },
         maxWidth: { xs: 350, md: 1 },
         gap: 2,
       }}
     >
       <Box sx={{ gridRow: { md: 'span 2' } }}>
-        <ProfileImage src={profileImage} alt='profile picture' priority />
+        <ProfileImage
+          src={profileImage}
+          alt='profile picture'
+          width={320}
+          height={320}
+        />
       </Box>
       <Box>
         <Typography variant='h5' component='div' sx={{ fontWeight: 600 }}>
