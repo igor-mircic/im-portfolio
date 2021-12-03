@@ -1,6 +1,8 @@
 import { Container } from '@mui/material';
 import PersonalDetails from '../sections/PersonalDetails';
-import { personalDetails } from '../consts/personalDetails';
+import personalDetails from '../consts/personalDetails';
+import { Skills } from '../sections/Skills';
+import skills from '../consts/skills';
 
 export default function Index() {
   return (
@@ -8,7 +10,8 @@ export default function Index() {
       maxWidth='lg'
       sx={{ pt: 1, display: 'flex', justifyContent: 'center' }}
     >
-      <PersonalDetails {...personalDetails} />
+      {/* <PersonalDetails {...personalDetails} /> */}
+      <Skills {...{ skills }} />
     </Container>
   );
 }

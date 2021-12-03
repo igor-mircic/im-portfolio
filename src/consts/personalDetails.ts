@@ -1,6 +1,6 @@
 import { IPersonalDetails } from '../sections/PersonalDetails';
 
-export const personalDetails: IPersonalDetails = {
+const personalDetails: IPersonalDetails = {
   name: 'Igor Mirčić',
   jobTitle: 'Front-end developer',
   mail: 'contact@igor-mircic.com',
@@ -10,3 +10,5 @@ export const personalDetails: IPersonalDetails = {
     'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet laudantium, fugit atque aspernatur, nihil dicta obcaecati quaerat quidem eaque quae dignissimos officiis enim est! Dolores quaerat obcaecati culpa ratione qui?',
   ],
 };
+
+export default personalDetails;
