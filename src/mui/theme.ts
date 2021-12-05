@@ -35,6 +35,14 @@ const customTheme = createTheme({
         sx: { borderRadius: 3, padding: 2 },
       },
     },
+    MuiChip: {
+      defaultProps: {
+        variant: 'outlined',
+        sx: {
+          fontSize: 14,
+        },
+      },
+    },
   },
 });
 

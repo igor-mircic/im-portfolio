@@ -5,27 +5,31 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import Image from 'next/image';
 import profileImage from '../../public/me.jpg';
 
-const ProfileImage = styled(Image)(({ theme }) => ({
-  borderRadius: theme.spacing(2),
-}));
-
-export interface IPersonalDetails {
+interface IPersonDetails {
   name: string;
   jobTitle: string;
   mail: string;
   phone: string;
   intro: string[];
-  fullWidth: boolean;
 }
 
-const PersonalDetails = ({
-  name,
-  jobTitle,
-  mail,
-  phone,
-  intro,
-  fullWidth,
-}: IPersonalDetails) => {
+const personalDetails: IPersonDetails = {
+  name: 'Igor Mirčić',
+  jobTitle: 'Front-end developer',
+  mail: 'contact@igor-mircic.com',
+  phone: '(+381) 60 1300559',
+  intro: [
+    'Self-motivated developer, who is willing to learn and create outstanding UI applications.',
+  ],
+};
+
+const ProfileImage = styled(Image)(({ theme }) => ({
+  borderRadius: theme.spacing(2),
+}));
+
+const PersonalDetails = () => {
+  const fullWidth = false;
+  const { intro, jobTitle, mail, name, phone } = personalDetails;
   return (
     <Paper>
       <Box
