@@ -20,7 +20,11 @@ import {
   SiVim,
   SiExpress,
   SiDocker,
+  SiGraphql,
+  SiMongodb,
+  SiFirebase,
 } from 'react-icons/si';
+import { GrConnect } from 'react-icons/gr';
 
 export const Skills = () => {
   return (
@@ -59,6 +63,22 @@ export const Skills = () => {
             icon={
               <Box component={SiTailwindcss} fontSize={30} sx={{ pl: 1 }} />
             }
+          />
+          <Chip
+            label='RESTful APIs'
+            icon={<Box component={GrConnect} fontSize={28} sx={{ pl: 1 }} />}
+          />
+          <Chip
+            label='GraphQL'
+            icon={<Box component={SiGraphql} fontSize={24} />}
+          />
+          <Chip
+            label='MongoDB'
+            icon={<Box component={SiMongodb} fontSize={28} sx={{ pl: 1 }} />}
+          />
+          <Chip
+            label='Firebase'
+            icon={<Box component={SiFirebase} fontSize={28} sx={{ pl: 1 }} />}
           />
           <Chip
             label='Git'
