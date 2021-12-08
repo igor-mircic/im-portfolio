@@ -1,7 +1,8 @@
 import { Container } from '@mui/material';
-import PersonalDetails from '../sections/PersonalDetails';
 import { Skills } from '../sections/Skills';
 import { Box } from '@mui/system';
+import { Projects } from '../sections/Projects';
+import { PersonalDetails } from '../sections/PersonalDetails';
 
 export default function Index() {
   return (
@@ -13,13 +14,20 @@ export default function Index() {
           gap: 2,
           gridTemplateColumns: {
             xs: 'minmax(250px, 350px)',
-            md: '350px 1fr',
+            md: '350px 1fr 1fr',
           },
           justifyContent: 'center',
         }}
       >
-        <PersonalDetails />
-        <Skills />
+        <Box sx={{ gridRow: { md: 'span 2' } }}>
+          <PersonalDetails />
+        </Box>
+        <Box sx={{ gridColumn: { md: 'span 2' } }}>
+          <Skills />
+        </Box>
+        <Box sx={{ gridColumn: { md: 'span 2' } }}>
+          <Projects />
+        </Box>
       </Box>
     </Container>
   );

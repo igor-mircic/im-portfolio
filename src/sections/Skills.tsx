@@ -23,6 +23,7 @@ import {
   SiGraphql,
   SiMongodb,
   SiFirebase,
+  SiStyledcomponents,
 } from 'react-icons/si';
 import { GrConnect } from 'react-icons/gr';
 
@@ -62,6 +63,16 @@ export const Skills = () => {
             label='Tailwind CSS'
             icon={
               <Box component={SiTailwindcss} fontSize={30} sx={{ pl: 1 }} />
+            }
+          />
+          <Chip
+            label='Styled Components'
+            icon={
+              <Box
+                component={SiStyledcomponents}
+                fontSize={39}
+                sx={{ pl: 1 }}
+              />
             }
           />
           <Chip

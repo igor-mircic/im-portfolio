@@ -43,6 +43,15 @@ const customTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      defaultProps: {
+        sx: {
+          textTransform: 'capitalize',
+          px: 3,
+          borderRadius: 2,
+        },
+      },
+    },
   },
 });
 

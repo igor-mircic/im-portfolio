@@ -1,9 +1,9 @@
 import { Paper, Typography, ListItem, List, ListItemIcon } from '@mui/material';
-import { Box, styled } from '@mui/system';
+import { Box } from '@mui/system';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
-import Image from 'next/image';
 import profileImage from '../../public/me.jpg';
+import Image from '../components/Image';
 
 interface IPersonDetails {
   name: string;
@@ -23,11 +23,7 @@ const personalDetails: IPersonDetails = {
   ],
 };
 
-const ProfileImage = styled(Image)(({ theme }) => ({
-  borderRadius: theme.spacing(2),
-}));
-
-const PersonalDetails = () => {
+export const PersonalDetails = () => {
   const fullWidth = false;
   const { intro, jobTitle, mail, name, phone } = personalDetails;
   return (
@@ -44,7 +40,7 @@ const PersonalDetails = () => {
         }}
       >
         <Box sx={{ gridRow: { md: fullWidth ? 'span 2' : 'span 1' } }}>
-          <ProfileImage
+          <Image
             src={profileImage}
             alt='profile picture'
             width={320}
@@ -84,5 +80,3 @@ const PersonalDetails = () => {
     </Paper>
   );
 };
-
-export default PersonalDetails;
