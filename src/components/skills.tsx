@@ -24,6 +24,7 @@ import {
   SiMongodb,
   SiFirebase,
   SiStyledcomponents,
+  SiHtml5,
 } from 'react-icons/si';
 import { GrConnect } from 'react-icons/gr';
 
@@ -39,6 +40,10 @@ export const ReduxChip = () => (
 export const NextJSChip = () => (
   <Chip label='Next.js' icon={<SiNextdotjs fontSize={24} />} />
 );
+export const GatsbyChip = () => (
+  <Chip label='Gatsby' icon={<SiGatsby fontSize={24} />} />
+);
+
 export const TypeScriptChip = () => (
   <Chip
     label='TypeScript'
@@ -49,6 +54,13 @@ export const JavaScriptChip = () => (
   <Chip
     label='JavaScript'
     icon={<Box component={SiJavascript} fontSize={28} sx={{ pl: 1 }} />}
+  />
+);
+
+export const HTMLChip = () => (
+  <Chip
+    label='HTML5'
+    icon={<Box component={SiHtml5} fontSize={28} sx={{ pl: 1 }} />}
   />
 );
 
